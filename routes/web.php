@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserControl;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/user', function () {
+    return view('login');
+});
+Route::post('/Login', [UserControl::class, 'index'])->name('formLogin');
